@@ -33,8 +33,8 @@ const StyledTableCell = styled(TableCell)(() => ({
 
 function VendorList() {
     const { state, getVendorData, deleteVendor, dispatch } = useVendor();
-    const { vendors, totalPages, editFormOpen, newVendorFormOpen } = state;
-    const [page, setPage] = useState(1);
+    const { vendors, totalPages, editFormOpen, newVendorFormOpen, currentPage } = state;
+    const [page, setPage] = useState(currentPage || 1);
 
     const [formDetails, setFormDetails] = useState({
         vendorName: '',
